@@ -13,6 +13,10 @@ app.get('/', (request, response) => {
   response.json({ message: "It's express tutorials on tuesday" });
 });
 
+const importPostRouting = require('./Post/postsRoutes');
+
+app.use('/posts', importPostRouting);
+
 app.listen(PORT, HOST, () => {
   console.log('Server is running on: ' + HOST + PORT);
 });
